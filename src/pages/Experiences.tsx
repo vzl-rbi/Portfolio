@@ -1,13 +1,19 @@
 import { Award, Briefcase, Calendar, MapPin, X } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
-import certificateEntegra from "@/assets/certificate-entegra.jpg";
+import certificateEntegra from "@/assets/certificate-entegra.png";
 import experienceLetter from "@/assets/experience-letter-aansh.jpg";
-import certificateIot from "@/assets/certificate-iot.jpg";
+import certificateIot from "@/assets/certificate-iot.jpeg";
 import profilePhoto from "@/assets/profile-photo.jpg";
-import trainingPhoto from "@/assets/training-photo.jpg";
+import certificateReceive from "@/assets/certificate-receiving.png";
 
 const Experiences = () => {
   const experiences = [
@@ -42,17 +48,20 @@ const Experiences = () => {
   const achievements = [
     {
       title: "IoT Innovation Recognition",
-      description: "Received recognition from Dr. Mahabir Pun for IoT-based Home Automation System developed during college program",
+      description:
+        "Received recognition from Dr. Mahabir Pun for IoT-based Home Automation System developed during college program",
       icon: Award,
     },
     {
       title: "Technical Documentation Excellence",
-      description: "Recognized for excellence in technical documentation at Entegra Sources Pvt. Ltd., improving product adoption",
+      description:
+        "Recognized for excellence in technical documentation at Entegra Sources Pvt. Ltd., improving product adoption",
       icon: Award,
     },
     {
       title: "Full-Stack Project Development",
-      description: "Developed multiple frontend and API projects using Express.js, React, and Laravel with modern best practices",
+      description:
+        "Developed multiple frontend and API projects using Express.js, React, and Laravel with modern best practices",
       icon: Award,
     },
   ];
@@ -79,8 +88,8 @@ const Experiences = () => {
       caption: "Home Automation System - Dr. Mahabir Pun",
     },
     {
-      image: trainingPhoto,
-      title: "IoT Workshop Training",
+      image: certificateReceive,
+      title: "Certificate Receive Moment",
       caption: "Hands-on IoT project development session",
     },
   ];
@@ -93,9 +102,12 @@ const Experiences = () => {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-4xl font-bold mb-4 text-gradient">Experience & Achievements</h1>
+            <h1 className="text-4xl font-bold mb-4 text-gradient">
+              Experience & Achievements
+            </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              My professional journey and recognition in software development and technical writing
+              My professional journey and recognition in software development
+              and technical writing
             </p>
           </div>
 
@@ -115,7 +127,9 @@ const Experiences = () => {
                   <CardHeader>
                     <div className="flex flex-wrap justify-between items-start gap-4">
                       <div className="flex-1">
-                        <CardTitle className="text-2xl mb-2">{exp.role}</CardTitle>
+                        <CardTitle className="text-2xl mb-2">
+                          {exp.role}
+                        </CardTitle>
                         <CardDescription className="text-lg font-semibold text-foreground">
                           {exp.company}
                         </CardDescription>
@@ -140,13 +154,19 @@ const Experiences = () => {
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="text-accent mt-1">•</span>
-                          <span className="text-muted-foreground">{achievement}</span>
+                          <span className="text-muted-foreground">
+                            {achievement}
+                          </span>
                         </li>
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-2 pt-4 border-t">
                       {exp.skills.map((skill) => (
-                        <Badge key={skill} variant="outline" className="text-xs">
+                        <Badge
+                          key={skill}
+                          variant="outline"
+                          className="text-xs"
+                        >
                           {skill}
                         </Badge>
                       ))}
@@ -174,8 +194,12 @@ const Experiences = () => {
                     <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <achievement.icon className="text-accent" size={32} />
                     </div>
-                    <h3 className="text-lg font-semibold mb-3">{achievement.title}</h3>
-                    <p className="text-sm text-muted-foreground">{achievement.description}</p>
+                    <h3 className="text-lg font-semibold mb-3">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {achievement.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -184,7 +208,9 @@ const Experiences = () => {
 
           {/* Gallery Section */}
           <div className="mt-16">
-            <h2 className="text-2xl font-bold mb-8 text-center">Certificates & Photos Gallery</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">
+              Certificates & Photos Gallery
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {galleryItems.map((item, index) => (
                 <Card
@@ -203,7 +229,9 @@ const Experiences = () => {
                   </div>
                   <CardContent className="pt-4">
                     <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.caption}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {item.caption}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -211,7 +239,10 @@ const Experiences = () => {
           </div>
 
           {/* Image Preview Dialog */}
-          <Dialog open={selectedImage !== null} onOpenChange={() => setSelectedImage(null)}>
+          <Dialog
+            open={selectedImage !== null}
+            onOpenChange={() => setSelectedImage(null)}
+          >
             <DialogContent className="max-w-4xl p-0">
               <DialogClose className="absolute right-4 top-4 z-50 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
                 <X className="h-6 w-6 text-white drop-shadow-lg" />
@@ -225,8 +256,12 @@ const Experiences = () => {
                     className="w-full h-auto max-h-[80vh] object-contain"
                   />
                   <div className="bg-background/95 p-4 border-t">
-                    <h3 className="font-semibold text-lg">{galleryItems[selectedImage].title}</h3>
-                    <p className="text-sm text-muted-foreground">{galleryItems[selectedImage].caption}</p>
+                    <h3 className="font-semibold text-lg">
+                      {galleryItems[selectedImage].title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {galleryItems[selectedImage].caption}
+                    </p>
                   </div>
                 </div>
               )}
